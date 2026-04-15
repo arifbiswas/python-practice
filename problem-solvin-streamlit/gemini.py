@@ -25,7 +25,7 @@ client = genai.Client(api_key=api_key)
 # )
 response = client.models.generate_content(
     model="gemini-3-flash-preview",
-    contents=[prompt,"Improve this sentence professionally"],
+    contents=[prompt],
      config=types.GenerateContentConfig(
         thinking_config=types.ThinkingConfig(thinking_level="low")
     ),
@@ -33,5 +33,7 @@ response = client.models.generate_content(
 
 
 st.markdown(response.text)
+
+
 
 # st.write(response)
